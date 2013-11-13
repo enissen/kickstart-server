@@ -1,6 +1,6 @@
 # Path to app that will be configured by unicorn, 
 # note the trailing slash in this example
-@dir = "/home/atlas/kickstart-server/current/"
+@dir = "/home/atlas/kickstart-server/current"
 
 worker_processes 4
 working_directory @dir
