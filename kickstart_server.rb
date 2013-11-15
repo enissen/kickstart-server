@@ -6,7 +6,7 @@ require "json"
 class KickstartServer < Sinatra::Base
 
   get '/' do
-    'I\'m here to serve you!'
+    "I\'m here to serve you!"
   end
 
 
