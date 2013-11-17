@@ -31,7 +31,7 @@ namespace :symlink do
   end
 end
 
-namespace :nginx
+namespace :nginx do
   desc "restart nginx server"
   task :restart do
     run "service nginx restart"
