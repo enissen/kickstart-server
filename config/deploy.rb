@@ -24,8 +24,20 @@ namespace :symlink do
   task :lib do
     run "ln -fs #{shared_path}/lib #{release_path}/lib" 
   end
+
+  desc "symlinks src directory" 
+  task :src do
+    run "ln -fs #{shared_path}/src #{release_path}/src" 
+  end
+end
+
+namespace :nginx
+  desc "restart nginx server"
+  task :restart
+    run "service nginx restart"
+  end
 end
 
 ###########################################################
 
-# after "deploy:create_symlink", symlink:lib                   
+after "deploy:create_symlink", nginx:restart                  
