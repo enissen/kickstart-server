@@ -33,7 +33,7 @@ end
 
 namespace :nginx
   desc "restart nginx server"
-  task :restart
+  task :restart do
     run "service nginx restart"
   end
 end
