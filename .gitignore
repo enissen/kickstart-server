@@ -1,3 +1,6 @@
+# downloadable source files
+src/**/*
+
 tmp/*
 config/nginx.conf
 

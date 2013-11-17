@@ -1,0 +1,7 @@
+ubuntu-01:
+  platform: linux
+  version: ubuntu 12.04.03
+  bit: 64
+  driver:
+    firefox,
+    chrome
