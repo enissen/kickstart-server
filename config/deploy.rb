@@ -40,4 +40,4 @@ end
 
 ###########################################################
 
-after "deploy:create_symlink", nginx:restart                  
+after "deploy:create_symlink", 	"nginx:restart"                  
