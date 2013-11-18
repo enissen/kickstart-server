@@ -27,4 +27,10 @@ class KickstartServer < Sinatra::Base
     update(params[:node]).to_json
   end
 
+
+  get 'download/*' do |filepath|
+    file = File.join("#{filepath}")
+    send_file(file, :disposition => 'attachment', :filename => File.basename(file))
+  end
+
 end

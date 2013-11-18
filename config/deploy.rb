@@ -8,7 +8,7 @@ set :deploy_to,   		"/srv/#{application}"
 
 set :scm, 				"git"
 set :user, 				"root" 			#"deploy"
-set :scm_passphrase, 	"Er$Ni.2712"	#"D1ploy!"
+#set :scm_passphrase, 	"Er$Ni.2712"	#"D1ploy!"
 
 set :ssh_options, 		{ :forward_agent => true }
 set :branch, 			"master"
@@ -40,4 +40,5 @@ end
 
 ###########################################################
 
+after "deploy:create_symlink", 	"symlink:src"  
 after "deploy:create_symlink", 	"nginx:restart"                  
