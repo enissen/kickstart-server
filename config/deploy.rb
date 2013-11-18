@@ -8,11 +8,12 @@ set :deploy_to,   		"/srv/#{application}"
 
 set :scm, 				"git"
 set :user, 				"root" 			#"deploy"
-#set :scm_passphrase, 	"Er$Ni.2712"	#"D1ploy!"
 
 set :ssh_options, 		{ :forward_agent => true }
 set :branch, 			"master"
 set :deploy_via, 		:remote_cache
+
+set :keep_releases, 	3
 
 role :web, 				"#{ip}"     
 role :app, 				"#{ip}"   
