@@ -35,7 +35,8 @@ class KickstartServer < Sinatra::Base
 
 
   get '/download/*' do |filepath|
-    send_file(File.join(filepath), disposition: 'attachment', filename: File.basename(file))
+    file = File.join(filepath)
+    send_file(file, disposition: 'attachment', filename: File.basename(file))
   end
 
 end
