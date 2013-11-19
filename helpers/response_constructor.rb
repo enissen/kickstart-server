@@ -1,4 +1,5 @@
 require "yaml"
+require "json"
 
 module ResponseConstructor
 
@@ -38,7 +39,37 @@ module ResponseConstructor
 	end
 
 
+	#
+	#
+	def node_selenium_config(node, ip)
+		nodes, services = lib('nodes'), lib('services')
+		config = File.open(File.join("lib", "node_config.yml"), 'r') { |f| f.read }
+
+		puts create_node_capabilities(nodes[node])
+
+		{	"NODE_CAPABILITIES" => create_node_capabilities(nodes[node]), 
+			"HOST_IP" => ip.strip,
+			"HOST_PORT" => nodes[node]["selenium-port"],
+			"HUB_IP" => services["selenium-hub-ip"],
+			"HUB_PORT" => services["selenium-hub-port"]
+
+		}.each { |key, value| config = config.gsub!(/#{key}/, "#{value}") }
+	end
+
+
 	#####################################################
+
+
+	def create_node_capabilities(node)
+		cap = []
+
+		node['driver'].each do |key, driver|
+			cap << {"browserName" => "#{key}", "platform" => "#{node['platform'].upcase}", 
+					"version" => "#{driver['version']}", "maxInstances" => driver['instances'].to_i}.to_json
+		end 
+
+		caps.to_json
+	end
 
 
 	# returns the content of the requested yaml file
