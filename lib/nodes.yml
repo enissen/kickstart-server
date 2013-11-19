@@ -1,7 +1,8 @@
 ubuntu-01:
-  platform: linux
-  version: ubuntu 12.04.03
+  platform: Linux
+  version: Ubuntu 12.04.3
   bit: 64
+  selenium-port: 5570
   driver:
     firefox:
       version: 23

@@ -1,3 +1,3 @@
 selenium-version: 2.37.0
-selenium-server-src: "src/selenium-server-stndalone-2.37.0.jar"
+selenium-server-src: "src/selenium-server-standalone-2.37.0.jar"
 chrome-driver: "src/chrome/chrome-driver"
