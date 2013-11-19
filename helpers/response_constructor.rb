@@ -61,11 +61,12 @@ module ResponseConstructor
 
 
 	def create_node_capabilities(node)
+		nodes = lib('nodes')
 		cap = []
 
-		node['driver'].each do |key, driver|
-			cap << {"browserName" => "#{key}", "platform" => "#{node['platform'].upcase}", 
-					"version" => "#{driver['version']}", "maxInstances" => driver['instances'].to_i}.to_json
+		nodes[node]['driver'].each do |key, values|
+			cap << {"browserName" => "#{key}", "platform" => "#{nodes[node]['platform'].upcase}", 
+					"version" => "#{values['version']}", "maxInstances" => values['instances'].to_i}.to_json
 		end 
 
 		caps.to_json
