@@ -3,5 +3,9 @@ ubuntu-01:
   version: ubuntu 12.04.03
   bit: 64
   driver:
-    firefox,
-    chrome
+    firefox:
+      version: 23
+      instances: 5
+    chrome:
+      version: 28
+      instances: 5
