@@ -54,7 +54,7 @@ module ResponseConstructor
 
 		}.each { |key, value| config = config.gsub!(/#{key.to_s.upcase}/, "#{value}") }
 
-		config.gsub!(/(\n|\t|\s)/, '')
+		config.gsub!(/(\n|\t|\s)/, '').to_json
 	end
 
 
