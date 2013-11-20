@@ -1,11 +1,9 @@
 {
   "capabilities":
-      [
-		    NODE_CAPABILITIES
-      ],
+		NODE_CAPABILITIES,
   "configuration":
   {
-    "proxy": "org.openqa.grid.selenium.proxy.DefaultRemoteProxy",
+    "proxy": REMOTE_PROXY,
     "maxSession": 5,
     "port": HOST_PORT,
     "host": HOST_IP,

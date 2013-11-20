@@ -45,31 +45,31 @@ module ResponseConstructor
 		nodes, services = lib('nodes'), lib('services')
 		config = File.open(File.join("lib", "node_config.yml"), 'r') { |f| f.read }
 
-		puts create_node_capabilities(nodes[node])
+		{	node_capabilities: create_node_capabilities(nodes[node]), 
+			remote_proxy: "\"#{services["selenium-remote-proxy"]}\"",
+			host_ip: ip.strip,
+			host_port: nodes[node]["selenium-port"],
+			hub_ip: services["selenium-hub-ip"],
+			hub_port: services["selenium-hub-port"]
 
-		{	"NODE_CAPABILITIES" => create_node_capabilities(nodes[node]), 
-			"HOST_IP" => ip.strip,
-			"HOST_PORT" => nodes[node]["selenium-port"],
-			"HUB_IP" => services["selenium-hub-ip"],
-			"HUB_PORT" => services["selenium-hub-port"]
+		}.each { |key, value| config = config.gsub!(/#{key.to_s.upcase}/, "#{value}") }
 
-		}.each { |key, value| config = config.gsub!(/#{key}/, "#{value}") }
+		config
 	end
 
 
 	#####################################################
 
 
-	def create_node_capabilities(node)
-		nodes = lib('nodes')
-		cap = []
+	def create_node_capabilities(node, caps = [])
 
-		nodes[node]['driver'].each do |key, values|
-			cap << {"browserName" => "#{key}", "platform" => "#{nodes[node]['platform'].upcase}", 
-					"version" => "#{values['version']}", "maxInstances" => values['instances'].to_i}.to_json
+		node['driver'].each do |key, values|
+			entry = {browserName: key, platform: node['platform'].upcase}
+			values.each { |name, value| entry[name.to_s] = value }
+			caps << entry
 		end 
-
-		caps.to_json
+		
+		caps.to_json  
 	end
 
 
