@@ -22,7 +22,7 @@ module ResponseConstructor
 		config = lib('requirements')
 		
 		update_hash = {status: "Ok"}
-		update_hash["selenium-server"] = config["selenium-server-src"]
+		update_hash["selenium-server.jar"] = config["selenium-server-src"]
 		
 		update_hash
 	end
@@ -39,7 +39,11 @@ module ResponseConstructor
 	end
 
 
+	# opens the default node config pattern and replaces
+	# all node specific information
 	#
+	# @params node [String] the name of the node
+	# @params ip [String] the ip address of the node
 	#
 	def node_selenium_config(node, ip)
 		nodes, services = lib('nodes'), lib('services')
@@ -54,19 +58,22 @@ module ResponseConstructor
 
 		}.each { |key, value| config = config.gsub!(/#{key.to_s.upcase}/, "#{value}") }
 
-		config.gsub!(/(\n|\t|\s)/, '').to_json
+		config.gsub!(/(\n|\t|\s)/,'').to_json
 	end
 
 
 	#####################################################
 
 
-	# creates the node capability of each listed driver
+	# creates the node capability for each listed driver
+	#
+	# @params node [Hash] the hash representation of the node
+	# @params caps [Hash] new hash to save created capabilitites
 	#
 	def create_node_capabilities(node, caps = [])
 
 		node['driver'].each do |key, values|
-			entry = {browserName: key, platform: node['platform'].upcase}
+			entry = { browserName: key, platform: node['platform'].upcase }
 			values.each { |name, value| entry[name.to_s] = value }
 			caps << entry
 		end 
