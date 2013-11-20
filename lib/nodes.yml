@@ -5,8 +5,8 @@ ubuntu-01:
   selenium-port: 5570
   driver:
     firefox:
-      version: 23
+      version: "23"
       instances: 5
     chrome:
-      version: 28
+      version: "28"
       instances: 5
