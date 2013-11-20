@@ -54,13 +54,15 @@ module ResponseConstructor
 
 		}.each { |key, value| config = config.gsub!(/#{key.to_s.upcase}/, "#{value}") }
 
-		config
+		config.gsub!(/\n/, '')
 	end
 
 
 	#####################################################
 
 
+	# creates the node capability of each listed driver
+	#
 	def create_node_capabilities(node, caps = [])
 
 		node['driver'].each do |key, values|
@@ -68,7 +70,7 @@ module ResponseConstructor
 			values.each { |name, value| entry[name.to_s] = value }
 			caps << entry
 		end 
-		
+
 		caps.to_json  
 	end
 
