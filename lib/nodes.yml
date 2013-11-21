@@ -6,7 +6,7 @@ ubuntu-01:
   driver:
     firefox:
       version: "23"
-      instances: 5
+      maxInstances: 5
     chrome:
       version: "28"
-      instances: 5
+      maxInstances: 5
