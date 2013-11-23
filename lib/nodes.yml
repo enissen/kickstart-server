@@ -10,3 +10,19 @@ ubuntu-01:
     chrome:
       version: "28"
       maxInstances: 5
+
+windows7-01:
+  platform: Windows
+  version: 7
+  bit: 32
+  selenium-port: 5580
+  driver:
+    firefox:
+      version: "1"
+      maxInstances: 5
+    chrome:
+      version: "1"
+      maxInstances: 5
+    internet explorer:
+      version: "8"
+      maxInstances: 1
