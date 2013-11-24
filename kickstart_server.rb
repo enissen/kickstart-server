@@ -41,7 +41,7 @@ class KickstartServer < Sinatra::Base
 
 
   get '/node-worker' do 
-    file = File.join("src/node-worker.rb")
+    file = File.join("src/node_worker.rb")
     send_file(file, disposition: 'attachment', filename: File.basename(file))
   end
 
