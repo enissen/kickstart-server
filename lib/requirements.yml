@@ -1,3 +1,4 @@
+node-worker-version: 0.0.2
 selenium-version: 2.37.0
 selenium-server-src: "src/selenium-server-standalone-2.37.0.jar"
 chrome-driver: "src/chrome/chrome-driver"
