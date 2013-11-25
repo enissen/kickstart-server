@@ -9,7 +9,7 @@ class KickstartServer < Sinatra::Base
   helpers ResponseConstructor
 
   get '/' do
-    "I\'m here to serve you!"
+    "I run to serve you!"
   end
 
 
@@ -41,14 +41,13 @@ class KickstartServer < Sinatra::Base
 
 
   get '/node-worker' do 
-    file = File.join("src/node_worker.rb")
+    file = File.join("src/node_config/node_worker.rb")
     send_file(file, disposition: 'attachment', filename: File.basename(file))
   end
 
 
   get '/node-config/*/*' do |node, ip|
     content_type :json
-    #node_selenium_config(params[:node], params[:ip]).to_json
     node_selenium_config(node, ip)
   end
 
