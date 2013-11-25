@@ -22,8 +22,8 @@ module ResponseConstructor
 		config = lib('requirements')
 		
 		update_hash = {status: "Ok"}
-		update_hash["selenium-server.jar"] = config["selenium-server-src"]
-		update_hash["IEDriverServer.exe"] = config["ie_driver_server-#{node['bit']}-src"] if has_driver(node, "internet explorer")
+		#update_hash["selenium-server.jar"] = config["selenium-server-src"]
+		update_hash["IEDriverServer.exe"] = config["ie-driver-server-#{node['bit']}-src"] if has_driver(node, "internet explorer")
 		
 		update_hash
 	end
