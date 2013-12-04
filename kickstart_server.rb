@@ -51,4 +51,11 @@ class KickstartServer < Sinatra::Base
     node_selenium_config(node, ip)
   end
 
+
+  get '/starter-kit' do |operating_system|    
+    starter_kit = YAML::load(File.open(File.join('lib', 'requirements.yml')))['starter-kit']
+    file = File.join("src/starter-kit/#{starter_kit}")
+    send_file(file, disposition: 'attachment', filename: File.basename(file))
+  end
+
 end
