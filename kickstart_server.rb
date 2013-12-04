@@ -52,7 +52,7 @@ class KickstartServer < Sinatra::Base
   end
 
 
-  get '/starter-kit' do |operating_system|    
+  get '/starter-kit' do   
     starter_kit = YAML::load(File.open(File.join('lib', 'requirements.yml')))['starter-kit']
     file = File.join("src/starter-kit/#{starter_kit}")
     send_file(file, disposition: 'attachment', filename: File.basename(file))
