@@ -16,6 +16,9 @@ windows7-01:
   version: 7
   bit: 32
   selenium-port: 5580
+  ip: 192.168.56.101
+  path: /home/atlas/vagrant/projects/win7-32-ie10-01-e3s
+  vbox-id: "1234123-1231-123-123"
   driver:
     firefox:
       version: "1"

@@ -23,7 +23,9 @@ module ResponseConstructor
 		
 		update_hash = {status: "Ok"}
 		update_hash["selenium-server.jar"] = config["selenium-server-src"]
-		update_hash["IEDriverServer.exe"] = config["ie-driver-server-#{node['bit']}-src"] if has_driver(node, "internet explorer")
+		update_hash["e3s-proxy.jar"] = config["selenium-e3s-proxy-src"]
+		update_hash["rabbitmq-client.jar"] = config["rabbitmq-java-client"]
+		update_hash["IEDriverServer.exe"] = config["ie-driver-server-#{node['bit']}-src"] if has_driver?(node, "internet explorer")
 		
 		update_hash
 	end
@@ -97,7 +99,7 @@ module ResponseConstructor
 	# @params node [Hash] the hash representation of the node
 	# @params browser [String] the broser name
 	#
-	def has_driver(node, browser)
+	def has_driver?(node, browser)
 		node['driver'].each do |key, value|
 			return true if key.eql? browser
 		end

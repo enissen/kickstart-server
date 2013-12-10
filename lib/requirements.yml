@@ -1,11 +1,21 @@
+# the node worker runs on VMs. it manages the communication
+# with the kickstart server, initialize software updates and
+# handles/starts all relevant processes on the node (e.g. selenium node) 
 node-worker-version: 0.0.2
 
+# all selenium stuff, dependencies and extensions go here
 selenium-version: 2.37.0
-selenium-server-src: "src/selenium-server-standalone-2.37.0.jar"
+selenium-server-src: "src/selenium/selenium-server-standalone-2.37.0.jar"
+selenium-e3s-proxy-src: "src/selenium/e3s-proxy-1.0-SNAPSHOT.jar"
 
-chrome-driver: "src/chrome/2.7chrome-driver"
+chrome-driver: "src/chrome/2.7/chrome-driver"
 
 ie-driver-server-32-src: "src/ie/2.37.0/32/IEDriverServer.exe"
 ie-driver-server-64-src: "src/ie/2.37.0/64/IEDriverServer.exe"
 
 starter-kit: "e3s-starter-kit-0.1.zip"
+
+# the rabbitmq client is needed on every VM since the 
+# selenium remote proxy that runs on every node/VM uses
+# AMQP to communicate with the node handler. 
+rabbitmq-java-client: "src/rabbitmq-client/rabbitmq-client.jar"
