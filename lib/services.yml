@@ -1,5 +1,5 @@
 selenium-hub-ip: 91.250.87.191
 selenium-hub-port: 4444
-#selenium-remote-proxy: org.openqa.grid.selenium.proxy.DefaultRemoteProxy
-selenium-remote-proxy: com.e3s.proxy.E3sProxy
+selenium-remote-proxy: org.openqa.grid.selenium.proxy.DefaultRemoteProxy
+#selenium-remote-proxy: com.e3s.proxy.E3sProxy
 kickstart-server: http://91.250.87.191:3333

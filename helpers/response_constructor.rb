@@ -42,6 +42,17 @@ module ResponseConstructor
 	end
 
 
+	# returns all node settings of the requested
+	# node as json file 
+	# 
+	# @params node_name [String] the name of the node
+	#
+	def node_settings(node_name)
+		nodes = lib('nodes')
+		nodes[node_name].to_json
+	end
+
+
 	# opens the default node config pattern and replaces
 	# all node specific information
 	#
@@ -52,8 +63,10 @@ module ResponseConstructor
 		nodes, services = lib('nodes'), lib('services')
 		config = File.open(File.join("lib", "node_config.yml"), 'r') { |f| f.read }
 
+		nodes[node]["selenium-remote-proxy"].nil? ? remote_proxy = services["selenium-remote-proxy"] : remote_proxy = nodes[node]["selenium-remote-proxy"]
+
 		{	node_capabilities: create_node_capabilities(nodes[node]), 
-			remote_proxy: "\"#{services["selenium-remote-proxy"]}\"",
+			remote_proxy: "\"#{remote_proxy}\"",
 			host_ip: ip.strip,
 			host_port: nodes[node]["selenium-port"],
 			hub_ip: services["selenium-hub-ip"],

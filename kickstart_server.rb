@@ -33,6 +33,11 @@ class KickstartServer < Sinatra::Base
     node_basic_config(params[:node]).to_json
   end
 
+  get '/node/:node_name' do
+    content_type :json
+    node_settings(params[:node_name]).to_json
+  end
+
 
   get '/download/*' do |filepath|
     file = File.join(filepath)
