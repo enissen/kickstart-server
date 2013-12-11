@@ -49,7 +49,7 @@ module ResponseConstructor
 	#
 	def node_settings(node_name)
 		nodes = lib('nodes')
-		nodes[node_name].to_json
+		nodes[node_name]
 	end
 
 
