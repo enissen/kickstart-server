@@ -7,6 +7,7 @@ node-worker-version: 0.0.2
 selenium:
 	version: 2.37.0
 	server: "src/selenium/selenium-server-standalone-2.37.0.jar"
+	#https://selenium.googlecode.com/files/selenium-server-standalone-2.38.0.jar
 	e3s_proxy: "src/selenium/e3s-proxy-1.0-SNAPSHOT.jar"
 
 chrome_driver: "src/chrome/2.7/chrome-driver"

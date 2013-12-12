@@ -59,11 +59,13 @@ module ResponseConstructor
 	# 
 	# @params ip [String] the ip address of the node
 	#
-	def node_settings_by_ip(ip)
-		lib('nodes').each do |node|
-			return node if node["ip"].eql?(ip)
+	def node_settings_by_ip(ip, nodes = lib('nodes'))
+		nodes.each do |node_name, node|
+			unless nodes[node_name]["ip"].nil?
+				return node if nodes[node_name]["ip"].eql?(ip)
+			end
 		end
-		node = {}
+		node={}
 	end
 
 

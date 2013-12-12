@@ -2,6 +2,7 @@ ubuntu-01:
   platform: Linux
   version: Ubuntu 12.04.3
   bit: 64
+  ip: 10.0.2.15
   selenium-port: 5570
   driver:
     firefox:
