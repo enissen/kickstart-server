@@ -11,6 +11,10 @@ ubuntu-01:
       version: "28"
       maxInstances: 5
 
+
+# Windows machines
+################################################
+
 windows7-01:
   platform: Windows
   version: 7
@@ -19,7 +23,7 @@ windows7-01:
   selenium-remote-proxy: com.e3s.proxy.E3sProxy
   ip: 192.168.56.101
   path: /home/atlas/vagrant/projects/win7-32-ie10-01-e3s
-  vbox-id: "1234123-1231-123-123"
+  vbox-id: "85bc4730-d418-4a0e-853f-bf99cf065a63"
   driver:
     firefox:
       version: "1"

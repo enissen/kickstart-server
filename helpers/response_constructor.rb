@@ -22,10 +22,10 @@ module ResponseConstructor
 		config = lib('requirements')
 		
 		update_hash = {status: "Ok"}
-		update_hash["selenium-server.jar"] = config["selenium-server-src"]
-		update_hash["e3s-proxy.jar"] = config["selenium-e3s-proxy-src"]
+		update_hash["selenium-server.jar"] = config["selenium"]["server"]
+		update_hash["e3s-proxy.jar"] = config["selenium"]["e3s_proxy"]
 		update_hash["rabbitmq-client.jar"] = config["rabbitmq-java-client"]
-		update_hash["IEDriverServer.exe"] = config["ie-driver-server-#{node['bit']}-src"] if has_driver?(node, "internet explorer")
+		update_hash["IEDriverServer.exe"] = config["ie-driver-server"]["#{node['bit']}bit"] if has_driver?(node, "internet explorer")
 		
 		update_hash
 	end
@@ -50,6 +50,20 @@ module ResponseConstructor
 	def node_settings(node_name)
 		nodes = lib('nodes')
 		nodes[node_name]
+	end
+
+
+	# returns all node settings of the requested
+	# node as json file. returns an empty json-like array
+	# if no node is listed with the given ip address
+	# 
+	# @params ip [String] the ip address of the node
+	#
+	def node_settings_by_ip(ip)
+		lib('nodes').each do |node|
+			return node if node["ip"].eql?(ip)
+		end
+		node = {}
 	end
 
 

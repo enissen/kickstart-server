@@ -4,15 +4,20 @@
 node-worker-version: 0.0.2
 
 # all selenium stuff, dependencies and extensions go here
-selenium-version: 2.37.0
-selenium-server-src: "src/selenium/selenium-server-standalone-2.37.0.jar"
-selenium-e3s-proxy-src: "src/selenium/e3s-proxy-1.0-SNAPSHOT.jar"
+selenium:
+	version: 2.37.0
+	server: "src/selenium/selenium-server-standalone-2.37.0.jar"
+	e3s_proxy: "src/selenium/e3s-proxy-1.0-SNAPSHOT.jar"
 
-chrome-driver: "src/chrome/2.7/chrome-driver"
+chrome_driver: "src/chrome/2.7/chrome-driver"
 
-ie-driver-server-32-src: "src/ie/2.37.0/32/IEDriverServer.exe"
-ie-driver-server-64-src: "src/ie/2.37.0/64/IEDriverServer.exe"
+ie_driver_server:
+	32bit: "src/ie/2.37.0/32/IEDriverServer.exe"
+	64bit: "src/ie/2.37.0/64/IEDriverServer.exe"
 
+# the starterkit includes all scripts for every 
+# operating system. After putting these scripts in place 
+# the node will update its software automatically
 starter-kit: "e3s-starter-kit-0.1.zip"
 
 # the rabbitmq client is needed on every VM since the 
