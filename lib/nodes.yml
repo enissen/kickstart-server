@@ -41,5 +41,5 @@ windows7-02:
   vbox-id: "24cca331-d935-4693-bdb3-5cab7e565d81"
   driver:
     firefox:
-      version: "1"
+      version: "26"
       maxInstances: 5
