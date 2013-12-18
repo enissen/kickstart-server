@@ -26,12 +26,20 @@ windows7-01:
   path: /home/atlas/vagrant/projects/win7-32-ie10-01-e3s
   vbox-id: "85bc4730-d418-4a0e-853f-bf99cf065a63"
   driver:
-    firefox:
-      version: "1"
-      maxInstances: 5
-    chrome:
-      version: "1"
-      maxInstances: 5
     internet explorer:
       version: "10"
       maxInstances: 1
+
+windows7-02:
+  platform: Windows
+  version: 7
+  bit: 32
+  selenium-port: 5581
+  selenium-remote-proxy: com.e3s.proxy.E3sProxy
+  ip: 192.168.56.102
+  path: /home/atlas/vagrant/projects/win7-32-ie10-02-e3s
+  vbox-id: "24cca331-d935-4693-bdb3-5cab7e565d81"
+  driver:
+    firefox:
+      version: "1"
+      maxInstances: 5

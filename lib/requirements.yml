@@ -5,16 +5,16 @@ node-worker-version: 0.0.2
 
 # all selenium stuff, dependencies and extensions go here
 selenium:
-	version: 2.37.0
-	server: "src/selenium/selenium-server-standalone-2.37.0.jar"
-	#https://selenium.googlecode.com/files/selenium-server-standalone-2.38.0.jar
-	e3s_proxy: "src/selenium/e3s-proxy-1.0-SNAPSHOT.jar"
+  version: 2.39.0
+  server: "src/selenium/selenium-server-standalone-2.39.0.jar"
+  #https://selenium.googlecode.com/files/selenium-server-standalone-2.38.0.jar
+  e3s_proxy: "src/selenium/e3s-proxy-1.0-SNAPSHOT.jar"
 
 chrome_driver: "src/chrome/2.7/chrome-driver"
 
 ie_driver_server:
-	32bit: "src/ie/2.37.0/32/IEDriverServer.exe"
-	64bit: "src/ie/2.37.0/64/IEDriverServer.exe"
+  32bit: "src/ie/2.39.0/32/IEDriverServer.exe"
+  64bit: "src/ie/2.39.0/64/IEDriverServer.exe"
 
 # the starterkit includes all scripts for every 
 # operating system. After putting these scripts in place 
