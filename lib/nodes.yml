@@ -43,3 +43,23 @@ windows7-02:
     firefox:
       version: "26"
       maxInstances: 5
+
+windows7-32-IE9-pub-client2:
+  platform: Windows
+  version: 7
+  bit: 32
+  selenium-port: 5582
+  selenium-remote-proxy: com.e3s.proxy.E3sProxy
+  ip: 192.168.56.104
+  path: /home/atlas/egrid-vagrant/windows7/32bit/pub-client2
+  vbox-id: "9f3f4bb2-52c7-42f8-9022-3c16881483a3"
+  driver:
+    internet explorer:
+      version: "10"
+      maxInstances: 1
+    firefox:
+      version: "28"
+      maxInstances: 3
+    chrome:
+      version: "33"
+      maxInstances: 3
