@@ -38,7 +38,7 @@ module ResponseConstructor
 	#
 	def node_basic_config(node)
 		config, service = lib('requirements'), lib('services')
-		{'name' => node, 'selenium-version' => config["selenium-version"], 'kickstart' => service["kickstart-server"]}
+		{'name' => node, 'selenium-version' => config["selenium"]["version"], 'kickstart' => service["kickstart-server"]}
 	end
 
 
