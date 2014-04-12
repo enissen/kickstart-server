@@ -28,7 +28,6 @@ module ResponseConstructor
     update_hash["IEDriverServer.exe"] = config["ie_driver_server"]["#{node['bit']}bit"] if has_driver?(node, "internet explorer")
     
     update_hash
-    config
 	end
 
 
