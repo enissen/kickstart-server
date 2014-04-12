@@ -20,14 +20,15 @@ module ResponseConstructor
 	#
 	def eval_update_hash(node)
 		config = lib('requirements')
-		
-		update_hash = {status: "Ok"}
-		update_hash["selenium-server.jar"] = config["selenium"]["server"]
-		update_hash["e3s-proxy.jar"] = config["selenium"]["e3s_proxy"]
-		update_hash["rabbitmq-client.jar"] = config["rabbitmq-java-client"]
-		update_hash["IEDriverServer.exe"] = config["ie-driver-server"]["#{node['bit']}bit"] if has_driver?(node, "internet explorer")
-		
-		update_hash
+    
+    update_hash = {status: "Ok"}
+    update_hash["selenium-server.jar"] = config["selenium"]["server"]
+    update_hash["e3s-proxy.jar"] = config["selenium"]["e3s_proxy"]
+    update_hash["rabbitmq-client.jar"] = config["rabbitmq-java-client"]
+    update_hash["IEDriverServer.exe"] = config["ie_driver_server"]["#{node['bit']}bit"] if has_driver?(node, "internet explorer")
+    
+    update_hash
+    config
 	end
 
 
