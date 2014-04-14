@@ -80,8 +80,8 @@ module ResponseConstructor
 		config = File.open(File.join("lib", "node_config.yml"), 'r') { |f| f.read }
 
 		nodes[node]["selenium-remote-proxy"].nil? ? remote_proxy = services["selenium-remote-proxy"] : remote_proxy = nodes[node]["selenium-remote-proxy"]
-		remote_proxy = "org.openqa.grid.selenium.proxy.DefaultRemoteProxy"
-		
+		#remote_proxy = "org.openqa.grid.selenium.proxy.DefaultRemoteProxy"
+
 		{	node_capabilities: create_node_capabilities(nodes[node]), 
 			remote_proxy: "\"#{remote_proxy}\"",
 			host_ip: ip.strip,
@@ -93,6 +93,7 @@ module ResponseConstructor
 
 		config.gsub!(/(\n|\t)/,'').to_json
 	end
+
 
 
 	##########################################################################
