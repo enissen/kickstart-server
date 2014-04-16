@@ -152,7 +152,7 @@ windows7-32-IE11-sel-client5:
   selenium-remote-proxy: com.e3s.proxy.E3sProxy
   ip: 192.168.56.204
   path: /home/atlas/egrid-vagrant/windows7/32bit/sel-client5
-  vbox-id: "e2b2cb04-f629-40c0-8faa-362e7a27b471"
+  vbox-id: "c1feebae-6e65-490f-ad99-4114ed2ed140"
   driver:
     internet explorer:
       version: "11"
