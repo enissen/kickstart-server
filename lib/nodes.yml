@@ -132,7 +132,27 @@ windows7-32-IE11-sel-client4:
   selenium-remote-proxy: com.e3s.proxy.E3sProxy
   ip: 192.168.56.203
   path: /home/atlas/egrid-vagrant/windows7/32bit/sel-client4
-  vbox-id: "5a34fc56-9e49-48df-9968-0b3956a74217"
+  vbox-id: "e2b2cb04-f629-40c0-8faa-362e7a27b471"
+  driver:
+    internet explorer:
+      version: "11"
+      maxInstances: 1
+    firefox:
+      version: "28"
+      maxInstances: 3
+    chrome:
+      version: "33"
+      maxInstances: 3
+
+windows7-32-IE11-sel-client5:
+  platform: Windows
+  version: 7
+  bit: 32
+  selenium-port: 5604
+  selenium-remote-proxy: com.e3s.proxy.E3sProxy
+  ip: 192.168.56.204
+  path: /home/atlas/egrid-vagrant/windows7/32bit/sel-client5
+  vbox-id: "e2b2cb04-f629-40c0-8faa-362e7a27b471"
   driver:
     internet explorer:
       version: "11"
