@@ -12,8 +12,6 @@ set :user, 				      "root" 			#"deploy"
 set :ssh_options, 		  { :forward_agent => true }
 set :branch, 			      "master"
 set :deploy_via, 		   :remote_cache
-set :pty,               true
-
 
 set :keep_releases, 	3
 
