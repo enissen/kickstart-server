@@ -6,29 +6,31 @@ set :ip,             	"91.250.87.191"
 
 set :deploy_to,   		"/srv/#{application}"
 
-set :scm, 				"git"
-set :user, 				"root" 			#"deploy"
+set :scm, 				      "git"
+set :user, 				      "root" 			#"deploy"
 
-set :ssh_options, 		{ :forward_agent => true }
-set :branch, 			"master"
-set :deploy_via, 		:remote_cache
+set :ssh_options, 		  { :forward_agent => true }
+set :branch, 			      "master"
+set :deploy_via, 		   :remote_cache
+set :pty,               true
+
 
 set :keep_releases, 	3
 
-role :web, 				"#{ip}"     
-role :app, 				"#{ip}"   
+role :web, 				"#{ip}"
+role :app, 				"#{ip}"
 
 ###########################################################
 
 namespace :symlink do
-  desc "symlinks lib directory" 
+  desc "symlinks lib directory"
   task :lib do
-    run "ln -fs #{shared_path}/lib #{release_path}/lib" 
+    run "ln -fs #{shared_path}/lib #{release_path}/lib"
   end
 
-  desc "symlinks src directory" 
+  desc "symlinks src directory"
   task :src do
-    run "ln -fs #{shared_path}/src #{release_path}/src" 
+    run "ln -fs #{shared_path}/src #{release_path}/src"
   end
 end
 
@@ -41,5 +43,5 @@ end
 
 ###########################################################
 
-after "deploy:create_symlink", 	"symlink:src"  
-after "deploy:create_symlink", 	"nginx:restart"                  
+after "deploy:create_symlink", 	"symlink:src"
+after "deploy:create_symlink", 	"nginx:restart"
