@@ -79,7 +79,7 @@ windows7-32-IE11-sel-client1:
       maxInstances: 1
     firefox:
       version: "28"
-      maxInstances: 3
+      maxInstances: 1
     chrome:
       version: "33"
       maxInstances: 3
@@ -99,7 +99,7 @@ windows7-32-IE11-sel-client2:
       maxInstances: 1
     firefox:
       version: "28"
-      maxInstances: 3
+      maxInstances: 1
     chrome:
       version: "33"
       maxInstances: 3
@@ -119,7 +119,7 @@ windows7-32-IE11-sel-client3:
       maxInstances: 1
     firefox:
       version: "28"
-      maxInstances: 3
+      maxInstances: 1
     chrome:
       version: "33"
       maxInstances: 3
@@ -139,7 +139,7 @@ windows7-32-IE11-sel-client4:
       maxInstances: 1
     firefox:
       version: "28"
-      maxInstances: 3
+      maxInstances: 1
     chrome:
       version: "33"
       maxInstances: 3
@@ -159,7 +159,7 @@ windows7-32-IE11-sel-client5:
       maxInstances: 1
     firefox:
       version: "28"
-      maxInstances: 3
+      maxInstances: 1
     chrome:
       version: "33"
       maxInstances: 3
@@ -179,7 +179,7 @@ windows7-32-IE11-sel-client6:
       maxInstances: 1
     firefox:
       version: "28"
-      maxInstances: 3
+      maxInstances: 1
     chrome:
       version: "33"
       maxInstances: 3
@@ -199,7 +199,7 @@ windows7-32-IE11-sel-client7:
       maxInstances: 1
     firefox:
       version: "28"
-      maxInstances: 3
+      maxInstances: 1
     chrome:
       version: "33"
       maxInstances: 3
